@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Manrope:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 38 57% 96%;
+    --foreground: 20 35% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 35% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 35% 12%;
+    --primary: 348 64% 30%;
+    --primary-foreground: 40 60% 97%;
+    --secondary: 28 45% 92%;
+    --secondary-foreground: 20 35% 12%;
+    --muted: 32 30% 93%;
+    --muted-foreground: 22 12% 42%;
+    --accent: 40 82% 55%;
+    --accent-foreground: 24 40% 12%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 28 28% 86%;
+    --input: 28 28% 84%;
+    --ring: 40 82% 55%;
+    --radius: 1rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01" on, "cv11" on;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 9999px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .pattern-dots {
+    background-image: radial-gradient(
+      hsl(var(--primary) / 0.08) 1.2px,
+      transparent 1.2px
+    );
+    background-size: 18px 18px;
+  }
+}
